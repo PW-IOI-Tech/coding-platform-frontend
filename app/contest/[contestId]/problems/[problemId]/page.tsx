@@ -200,7 +200,7 @@ const CodingProblemPage = () => {
             if (!problemId) return;
             setLoadingProblem(true);
             try {
-                const url =  `http://localhost:4000/api/v1/contests/problem/detail/${problemId}?contestId=${contestId}`;
+                const url =  `${process.env.NEXT_PUBLIC_CODING_BACKEND_URL}/api/v1/contests/problem/detail/${problemId}?contestId=${contestId}`;
                 const res = await fetch(url, { credentials: 'include' });
                 if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
                 const data = await res.json();
@@ -239,12 +239,12 @@ const CodingProblemPage = () => {
 
     // --- Polling for Run Result ---
     const { data: polledRunResult } = usePolling<RunResult>(
-        pollRunId ? `http://localhost:4000/api/v1/run/${pollRunId}` : null
+        pollRunId ? `${process.env.NEXT_PUBLIC_CODING_BACKEND_URL}/api/v1/run/${pollRunId}` : null
     );
 
     // --- Polling for Submission Result ---
     const { data: polledSubmissionResult } = usePolling<RunResult>(
-        pollSubmissionId ? `http://localhost:4000/api/v1/submissions/active/${pollSubmissionId}` : null
+        pollSubmissionId ? `${process.env.NEXT_PUBLIC_CODING_BACKEND_URL}/api/v1/submissions/active/${pollSubmissionId}` : null
     );
 
     // --- Update Run Result from Polling ---
@@ -278,7 +278,7 @@ const CodingProblemPage = () => {
         if (!problemId) return;
         setSubmissionsLoading(true);
         try {
-            const res = await fetch(`http://localhost:4000/api/v1/submissions/history/${problemId}`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_CODING_BACKEND_URL}/api/v1/submissions/history/${problemId}`, {
                 credentials: 'include',
             });
             const data = await res.json();
@@ -417,7 +417,7 @@ const CodingProblemPage = () => {
         setRunResult(null);
         setPollRunId(null);
         try {
-            const res = await fetch('http://localhost:4000/api/v1/run', {
+            const res = await fetch('${process.env.NEXT_PUBLIC_CODING_BACKEND_URL}/api/v1/run', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
@@ -448,7 +448,7 @@ const CodingProblemPage = () => {
         setIsSubmitting(true);
         setPollSubmissionId(null);
         try {
-            const res = await fetch('http://localhost:4000/api/v1/submissions', {
+            const res = await fetch('${process.env.NEXT_PUBLIC_CODING_BACKEND_URL}/api/v1/submissions', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
