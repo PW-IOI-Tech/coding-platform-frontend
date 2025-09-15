@@ -2,119 +2,118 @@
  * Interface for user profile data
  */
 export interface UserProfile {
-    name: string;
-    id: string;
-    team: string;
-    role: string;
-    email: string;
-    manager?: string;
+  id: string;
+  email: string;
+  name: string;
+  role: string;
+  phone?: string;
 }
 
 /**
  * Props interface for StickyHeader component
  */
 export interface StickyHeaderProps {
-    profile: UserProfile;
-    header?: string;
+  profile: UserProfile;
+  header?: string;
 }
 
 /**
  * Props interface for ProfileCard component
  */
 export interface ProfileCardProps {
-    profile: UserProfile;
-    isOpen: boolean;
-    onClose: () => void;
+  profile: UserProfile;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 /**
 * Interface for individual person data displayed in the UI
 */
 export interface PersonData {
-    id: string;
-    name: string;
-    role: string;
-    callCount: number;
-    messageCount?: number;
-    email?: string;
-    isActive: boolean;
+  id: string;
+  name: string;
+  role: string;
+  callCount: number;
+  messageCount?: number;
+  email?: string;
+  isActive: boolean;
 }
 
 
 export interface PastExam {
-    id: string;
-    title: string;
-    description: string;
-    date: string;
-    time: string;
-    rank: number;
-    solved: string;
-    totalProblems: number;
-    totalParticipants: number;
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  time: string;
+  rank: number;
+  solved: string;
+  totalProblems: number;
+  totalParticipants: number;
 }
 
 export interface UpcomingExam {
-    id: string;
-    title: string;
-    description: string;
-    tags: ExamTag[];
-    date: string;
-    time: string;
-    duration: string;
-    live: boolean
-    teacher?: string;
+  id: string;
+  title: string;
+  description: string;
+  tags: ExamTag[];
+  date: string;
+  time: string;
+  duration: string;
+  live: boolean
+  teacher?: string;
 }
 
 export interface ExamTag {
-    name: string;
-    color: string;
+  name: string;
+  color: string;
 }
 
 export interface Problem {
-    id: number;
-    title: string;
-    points: number;
-    isSolved: boolean;
+  id: number;
+  title: string;
+  points: number;
+  isSolved: boolean;
 }
 
 export interface LeaderboardEntry {
-    rank: number;
-    name: string;
-    solved: string;
-    score: number;
+  rank: number;
+  name: string;
+  solved: string;
+  score: number;
 }
 
 export interface SprintData {
-    timeRemaining: string;
-    currentRank: number;
-    participants: number;
-    currentScore: number;
-    solvedProblems: string;
-    totalScore: number;
-    problems: Problem[];
-    leaderboard: LeaderboardEntry[];
+  timeRemaining: string;
+  currentRank: number;
+  participants: number;
+  currentScore: number;
+  solvedProblems: string;
+  totalScore: number;
+  problems: Problem[];
+  leaderboard: LeaderboardEntry[];
 }
 
 export interface Question {
-    id: string;
-    number: number;
-    title: string;
-    topics: string[];
-    difficulty: 'Easy' | 'Medium' | 'Hard';
-    isSolved?: boolean;
+  id: string;
+  number: number;
+  title: string;
+  topics: string[];
+  difficulty: 'Easy' | 'Medium' | 'Hard';
+  isSolved?: boolean;
 }
 
 export interface PracticeQuestionsData {
-    questions: Question[];
+  questions: Question[];
 }
 
 export interface MenuItem {
-    id: string;
-    label: string;
-    action: () => void;
-    icon?: React.ReactNode;
-    disabled?: boolean;
-    variant?: 'default' | 'danger';
+  id: string;
+  label: string;
+  action: () => void;
+  icon?: React.ReactNode;
+  disabled?: boolean;
+  variant?: 'default' | 'danger';
 }
 
 export interface ExamResult {
@@ -137,36 +136,36 @@ export interface ExamResult {
 }
 
 export interface Exam {
-    id: string;
-    title: string;
-    description: string;
-    dateTime: string;
-    participants: number;
-    status: 'Published' | 'Unpublished';
+  id: string;
+  title: string;
+  description: string;
+  dateTime: string;
+  participants: number;
+  status: 'Published' | 'Unpublished';
 }
 
 export interface Student {
-    id: string;
-    rank: number;
-    name: string;
-    email: string;
-    obtainedScore: number;
-    solvedQuestions: string;
+  id: string;
+  rank: number;
+  name: string;
+  email: string;
+  obtainedScore: number;
+  solvedQuestions: string;
 }
 
 export interface ActionData {
-    type: string;
-    reason: string;
-    notes?: string;
+  type: string;
+  reason: string;
+  notes?: string;
 }
 
 export interface TestCase {
-    id: string;
-    name: string;
-    input: string;
-    expectedOutput: string;
-    points: number;
-    type: 'sample' | 'regular';
+  id: string;
+  name: string;
+  input: string;
+  expectedOutput: string;
+  points: number;
+  type: 'sample' | 'regular';
 }
 
 export interface Question {
