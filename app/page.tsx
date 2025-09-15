@@ -22,7 +22,7 @@ const CodingPlatformHome = () => {
         }
       });
 
-      const userData = res.data;
+      const userData = res.data.data;
 
       setUser(userData.user);
 

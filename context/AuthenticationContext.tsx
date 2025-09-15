@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                         'Content-Type': 'application/json'
                     }
                 });
-                const userData = res.data;
+                const userData = res.data.data;
 
                 setUser(userData.user);
                 if (userData.user.role === 'TEACHER') {
