@@ -114,7 +114,7 @@ const QCAuditSidebar: React.FC = () => {
     const handleLogout = async () => {
         setIsLoggingOut(true);
         try {
-            await axios.get((`${process.env.NEXT_PUBLIC_IOICLUB_BACKEND_URL}/api/v1/auth/logout`), {
+            await axios.get((`${process.env.NEXT_PUBLIC_IOICLUB_BACKEND_URL}/auth/logout`), {
                 withCredentials: true,
             });
             router.push('/');
